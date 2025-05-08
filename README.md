@@ -12,8 +12,6 @@ Mobile chat app developed in React Native with Expo, inspired by WhatsApp. It al
 
 - Formik + Yup – form handling and validation.
 
-- Gifted Chat – WhatsApp-style chat interface.
-
 - React Native Toast Message – custom toasts for notifications.
 
 - React Native Vector Icons – customizable icons in the app.
