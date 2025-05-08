@@ -1,2 +1,19 @@
-# chat-app
-A WhatsApp-inspired mobile chat app developed in React Native that allows users to communicate with each other in real time via text messages.
+📱 Chapp - React Native
+Mobile chat app developed in React Native with Expo, inspired by WhatsApp. It allows simulated login, chat view, simulated real-time chat, and user profile.
+
+▶️ How to run the project
+npm install
+npm start
+
+📦 Main libraries used
+Expo – simplified development environment for React Native.
+
+React Navigation – navigation between screens (stack + bottom tabs).
+
+Formik + Yup – form handling and validation.
+
+Gifted Chat – WhatsApp-style chat interface.
+
+React Native Toast Message – custom toasts for notifications.
+
+React Native Vector Icons – customizable icons in the app.
