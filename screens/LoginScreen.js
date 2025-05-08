@@ -1,29 +1,28 @@
 import React from 'react';
-import { View, TextInput, Button, Text, StyleSheet } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
 import { Formik } from 'formik';
-import * as Yup from 'yup';
-
-const LoginSchema = Yup.object().shape({
-  username: Yup.string().required('Username is required'),
-  password: Yup.string().required('Password is required'),
-});
+import { loginValidationSchema } from '../validations/loginValidation';
 
 export default function LoginScreen({ navigation }) {
+  const handleLogin = () => {
+    navigation.replace('Main');
+  };
+  
+
   return (
     <View style={styles.container}>
+      <Text style={styles.title}>Login</Text>
+
       <Formik
         initialValues={{ username: '', password: '' }}
-        validationSchema={LoginSchema}
-        onSubmit={(values) => {
-          console.log(values);
-          navigation.navigate('Chats');
-        }}
+        validationSchema={loginValidationSchema}
+        onSubmit={handleLogin}
       >
         {({ handleChange, handleBlur, handleSubmit, values, errors, touched }) => (
           <>
             <TextInput
-              placeholder="Username"
               style={styles.input}
+              placeholder="Username"
               onChangeText={handleChange('username')}
               onBlur={handleBlur('username')}
               value={values.username}
@@ -33,9 +32,9 @@ export default function LoginScreen({ navigation }) {
             )}
 
             <TextInput
+              style={styles.input}
               placeholder="Password"
               secureTextEntry
-              style={styles.input}
               onChangeText={handleChange('password')}
               onBlur={handleBlur('password')}
               value={values.password}
@@ -44,7 +43,7 @@ export default function LoginScreen({ navigation }) {
               <Text style={styles.error}>{errors.password}</Text>
             )}
 
-            <Button onPress={handleSubmit} title="Login" />
+            <Button title="Login" onPress={handleSubmit} />
           </>
         )}
       </Formik>
@@ -54,12 +53,22 @@ export default function LoginScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1, justifyContent: 'center', padding: 20,
+    flex: 1,
+    justifyContent: 'center',
+    padding: 24,
+  },
+  title: {
+    fontSize: 24,
+    marginBottom: 24,
+    textAlign: 'center',
   },
   input: {
-    borderWidth: 1, borderColor: '#ccc', padding: 10, marginBottom: 10, borderRadius: 5,
+    borderBottomWidth: 1,
+    marginBottom: 16,
+    padding: 10,
   },
   error: {
-    color: 'red', marginBottom: 10,
+    color: 'red',
+    marginBottom: 12,
   },
 });
