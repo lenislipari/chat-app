@@ -8,7 +8,8 @@ import {
   StyleSheet,
   SafeAreaView,
   TouchableOpacity,
-  TouchableWithoutFeedback
+  TouchableWithoutFeedback,
+  Keyboard
 } from "react-native";
 import { Formik } from "formik";
 import profileData from "../mocks/profile.json";

@@ -9,7 +9,8 @@ import {
   KeyboardAvoidingView,
   Platform,
   SafeAreaView,
-  TouchableWithoutFeedback
+  TouchableWithoutFeedback,
+  Keyboard
 } from "react-native";
 import specificChatsData from "../mocks/specificChats.json";
 import { Ionicons } from "@expo/vector-icons";
@@ -73,7 +74,6 @@ export default function ChatScreen({ route, navigation }) {
       <KeyboardAvoidingView
         style={styles.container}
         behavior={Platform.OS === "ios" ? "padding" : undefined}
-        keyboardVerticalOffset={90}
       >
         <View style={styles.header}>
           <TouchableOpacity

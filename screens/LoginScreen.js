@@ -8,7 +8,8 @@ import {
   KeyboardAvoidingView,
   Platform,
   Image,
-  TouchableWithoutFeedback
+  TouchableWithoutFeedback,
+  Keyboard 
 } from "react-native";
 import { Formik } from "formik";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
