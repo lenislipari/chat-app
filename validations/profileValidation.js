@@ -7,6 +7,7 @@ export const profileValidationSchema = Yup.object().shape({
 
   phone: Yup.string()
     .required("Phone is required")
+    .min(7, "Phone too short")
     .matches(
       /^[0-9+\-\s()]*$/,
       "Phone must be valid (numbers and symbols only)"
