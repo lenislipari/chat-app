@@ -1,10 +1,9 @@
 {
-    "profile": {
-      "name": "John",
-      "phone": "+123456789",
-      "photo": "https://marketplace.canva.com/EAFmXbWjG3g/1/0/1600w/canva-YQVjZm4iPII.jpg",
-      "status": "Available",
-      "lastSeen": "5 minutes ago"
-    }
+  "profile": {
+    "name": "John",
+    "phone": "+123456789",
+    "photo": "https://marketplace.canva.com/EAFmXbWjG3g/1/0/1600w/canva-YQVjZm4iPII.jpg",
+    "status": "Available",
+    "lastSeen": "5 minutes ago"
   }
-  
+}

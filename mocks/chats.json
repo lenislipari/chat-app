@@ -1,26 +1,25 @@
 {
-    "chats": [
-      {
-        "id": 1,
-        "contact": "John",
-        "lastMessage": "Hey, how are you?",
-        "lastMessageTime": "10:00 AM",
-        "avatar": "https://marketplace.canva.com/EAFmoaBdVVM/1/0/800w/canva-VYpmpbu6RW0.jpg"
-      },
-      {
-        "id": 2,
-        "contact": "Maria",
-        "lastMessage": "Do you want to go out tonight?",
-        "lastMessageTime": "yesterday",
-        "avatar": "https://marketplace.canva.com/EAFmXSny51I/1/0/1600w/canva-1Fscw8oj1-Q.jpg"
-      },
-      {
-        "id": 3,
-        "contact": "Peter",
-        "lastMessage": "I'll be late for the meeting",
-        "lastMessageTime": "2 hours ago",
-        "avatar": "https://marketplace.canva.com/EAFmXS7R66Y/1/0/400w/canva-7ZxydgiZgVk.jpg"
-      }
-    ]
-  }
-  
+  "chats": [
+    {
+      "id": 1,
+      "contact": "John",
+      "lastMessage": "Hey, how are you?",
+      "lastMessageTime": "10:00 AM",
+      "avatar": "https://marketplace.canva.com/EAFmoaBdVVM/1/0/800w/canva-VYpmpbu6RW0.jpg"
+    },
+    {
+      "id": 2,
+      "contact": "Maria",
+      "lastMessage": "Do you want to go out tonight?",
+      "lastMessageTime": "yesterday",
+      "avatar": "https://marketplace.canva.com/EAFmXSny51I/1/0/1600w/canva-1Fscw8oj1-Q.jpg"
+    },
+    {
+      "id": 3,
+      "contact": "Peter",
+      "lastMessage": "I'll be late for the meeting",
+      "lastMessageTime": "2 hours ago",
+      "avatar": "https://marketplace.canva.com/EAFmXS7R66Y/1/0/400w/canva-7ZxydgiZgVk.jpg"
+    }
+  ]
+}
