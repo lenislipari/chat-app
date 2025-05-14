@@ -7,18 +7,19 @@ import {
   TouchableOpacity,
   KeyboardAvoidingView,
   Platform,
-  SafeAreaView,
 } from "react-native";
 import specificChatsData from "../mocks/specificChats.json";
 import { Ionicons } from "@expo/vector-icons";
 import chatStyles from "../styles/chatScreen.styles";
 import DismissKeyboardWrapper from "../components/DismissKeyboardWrapper";
 import MessageBubble from "../components/MessageBubble";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 export default function ChatScreen({ route, navigation }) {
   const { contact } = route.params;
   const [messages, setMessages] = useState([]);
   const [inputText, setInputText] = useState("");
+  const insets = useSafeAreaInsets();
 
   const handleSend = () => {
     if (!inputText.trim()) return;
@@ -64,45 +65,43 @@ export default function ChatScreen({ route, navigation }) {
 
   return (
     <DismissKeyboardWrapper>
-      <SafeAreaView style={chatStyles.safeArea}>
-        <KeyboardAvoidingView
-          style={chatStyles.container}
-          behavior={Platform.OS === "ios" ? "padding" : undefined}
-        >
-          <View style={chatStyles.header}>
-            <TouchableOpacity
-              onPress={() => navigation.goBack()}
-              style={chatStyles.backButton}
-              hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
-            >
-              <Ionicons name="chevron-back" size={24} color="#fff" />
-            </TouchableOpacity>
-            <Text style={chatStyles.headerTitle}>{contact}</Text>
-          </View>
-          <FlatList
-            data={messages}
-            renderItem={renderItem}
-            keyExtractor={(item) => item.id}
-            inverted
-            contentContainerStyle={{ padding: 10 }}
-          />
+      <KeyboardAvoidingView
+        style={[
+          chatStyles.container,
+          { paddingTop: insets.top, paddingBottom: insets.bottom },
+        ]}
+        behavior={Platform.OS === "ios" ? "padding" : undefined}
+      >
+        <View style={chatStyles.header}>
+          <TouchableOpacity
+            onPress={() => navigation.goBack()}
+            style={chatStyles.backButton}
+            hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+          >
+            <Ionicons name="chevron-back" size={24} color="#fff" />
+          </TouchableOpacity>
+          <Text style={chatStyles.headerTitle}>{contact}</Text>
+        </View>
+        <FlatList
+          data={messages}
+          renderItem={renderItem}
+          keyExtractor={(item) => item.id}
+          inverted
+          contentContainerStyle={{ padding: 10 }}
+        />
 
-          <View style={chatStyles.inputContainer}>
-            <TextInput
-              value={inputText}
-              onChangeText={setInputText}
-              placeholder="Escribe un mensaje"
-              style={chatStyles.input}
-            />
-            <TouchableOpacity
-              onPress={handleSend}
-              style={chatStyles.sendButton}
-            >
-              <Text style={chatStyles.sendText}>Enviar</Text>
-            </TouchableOpacity>
-          </View>
-        </KeyboardAvoidingView>
-      </SafeAreaView>
+        <View style={chatStyles.inputContainer}>
+          <TextInput
+            value={inputText}
+            onChangeText={setInputText}
+            placeholder="Escribe un mensaje"
+            style={chatStyles.input}
+          />
+          <TouchableOpacity onPress={handleSend} style={chatStyles.sendButton}>
+            <Text style={chatStyles.sendText}>Enviar</Text>
+          </TouchableOpacity>
+        </View>
+      </KeyboardAvoidingView>
     </DismissKeyboardWrapper>
   );
 }

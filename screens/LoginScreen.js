@@ -13,6 +13,7 @@ import loginStyles from "../styles/loginScreen.styles";
 import DismissKeyboardWrapper from "../components/DismissKeyboardWrapper";
 import FormField from "../components/FormField";
 import PrimaryButton from "../components/PrimaryButton";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 export default function LoginScreen({ navigation }) {
   const [showPassword, setShowPassword] = useState(false);
@@ -20,11 +21,15 @@ export default function LoginScreen({ navigation }) {
   const handleLogin = () => {
     navigation.replace("Main");
   };
+  const insets = useSafeAreaInsets();
 
   return (
     <DismissKeyboardWrapper>
       <KeyboardAvoidingView
-        style={loginStyles.container}
+        style={[
+          loginStyles.container,
+          { paddingTop: insets.top, paddingBottom: insets.bottom },
+        ]}
         behavior={Platform.OS === "ios" ? "padding" : undefined}
       >
         <View style={loginStyles.card}>

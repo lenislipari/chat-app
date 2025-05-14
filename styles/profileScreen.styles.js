@@ -1,10 +1,6 @@
 import { StyleSheet } from "react-native";
 
 export default profileStyles = StyleSheet.create({
-  safeArea: {
-    flex: 1,
-    backgroundColor: "#fff",
-  },
   container: {
     padding: 20,
   },

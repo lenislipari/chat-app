@@ -1,10 +1,6 @@
 import { StyleSheet } from "react-native";
 
 export default chatListStyles = StyleSheet.create({
-  safeArea: {
-    flex: 1,
-    backgroundColor: "#fff",
-  },
   container: {
     flex: 1,
     padding: 8,
